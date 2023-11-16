@@ -188,7 +188,7 @@
 
 	{#if cipher}
 		<p class="cipher-text">暗号文はこちらのメールアドレスに送信してください {email}</p>
-		<button type="button" on:click={() => copyToClipboard(email)}>メールアドレスをコピー</button>
+		<button type="button" on:click={() => copyToClipboard(email)}>Eメールアドレスをコピー</button>
 	{/if}
 	<nav>
 		<a href="/decrypto">シードフレーズを復号するページはこちらになります</a>
