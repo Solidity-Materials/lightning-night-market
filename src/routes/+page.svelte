@@ -8,6 +8,7 @@
 	let password = '';
 	let cipher = '';
 	let showPassword = false;
+	let email = 'gucchiyama75@gmail.com';
 
 	function togglePasswordVisibility() {
 		showPassword = !showPassword;
@@ -185,6 +186,10 @@
 		<button type="button" on:click={() => copyToClipboard(cipher)}>暗号文をコピー</button>
 	{/if}
 
+	{#if cipher}
+		<p class="cipher-text">暗号文はこちらのメールアドレスに送信してください {email}</p>
+		<button type="button" on:click={() => copyToClipboard(email)}>メールアドレスをコピー</button>
+	{/if}
 	<nav>
 		<a href="/decrypto">シードフレーズを復号するページはこちらになります</a>
 	</nav>
