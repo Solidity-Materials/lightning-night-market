@@ -105,8 +105,8 @@
 	</form>
 
 		{#if seedPhrase}
-		<p class="cipher-text">暗号文: {seedPhrase}</p>
-		<button type="button" on:click={() => copyToClipboard(seedPhrase)}>暗号文をコピー</button>
+		<p class="cipher-text">シードフレーズ: {seedPhrase}</p>
+		<button type="button" on:click={() => copyToClipboard(seedPhrase)}>シードフレーズをコピー</button>
 	{/if}
 
 	<nav>
@@ -115,6 +115,39 @@
 </main>
 
 <style>
+
+	@media (max-width: 480px) {
+		main {
+			width: 100%; /* メインコンテンツの幅を画面幅いっぱいにする */
+			padding: 10px; /* 画面の端に余白を設ける */
+		}
+
+		form label,
+		form textarea,
+		form button {
+			width: 100%; /* ラベル、入力フィールド、テキストエリア、ボタンの幅を画面幅いっぱいにする */
+			box-sizing: border-box; /* パディングやボーダーを幅に含める */
+		}
+
+
+
+		main {
+			padding: 20px;
+			font-family: sans-serif;
+			color: #696969;
+			width: 66%;
+			box-sizing: border-box;
+		}
+
+		h1 {
+			font-size: 24px;
+		}
+		form textarea,
+		form button {
+			width: 100%; /* ラベル、入力フィールド、テキストエリア、ボタンの幅を画面幅いっぱいにする */
+			box-sizing: border-box; /* パディングやボーダーを幅に含める */
+		}
+	}
 	:global(body) {
 		margin: 0;
 		background: linear-gradient(to bottom right, #afeeee 33%, #f0e68c 66%);
