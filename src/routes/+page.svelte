@@ -162,22 +162,16 @@
 			<textarea bind:value={inputSeed} rows="4" />
 		</label>
 		<label>
-			パスワード:
-			{#if showPassword}
-				<textarea bind:value={password} rows="1" class="password-input" />
-				<button type="button" on:click={() => copyToClipboard(password)} class="copy-button"
-					>パスワードをコピー</button
-				>
-			{:else}
-				<textarea bind:value={password} rows="1" class="password-input" minlength="8" />
-				<button type="button" on:click={() => copyToClipboard(password)} class="copy-button"
-					>パスワードをコピー</button
-				>
-			{/if}
-			<button type="button" on:click={togglePasswordVisibility} class="toggle-button"
-				>{showPassword ? '非表示にする' : 'パスワードを表示する'}</button
-			>
-		</label>
+            パスワード:
+            {#if showPassword}
+                <input type="text" bind:value={password} class="password-input" />
+            {:else}
+                <input type="password" bind:value={password} class="password-input" minlength="8" />
+            {/if}
+            <button type="button" on:click={togglePasswordVisibility} class="toggle-button">
+                {showPassword ? '非表示にする' : 'パスワードを表示する'}
+            </button>
+        </label>
 		<button type="submit" class="ciper-gen">暗号文を生成する</button>
 	</form>
 
@@ -220,11 +214,9 @@
 
 		.password-input {
 			margin-bottom: 20px;
+
 		}
-		.copy-button {
-			width: 80%;
-			margin-bottom: 10px;
-		}
+
 		.toggle-button {
 			width: 100%; /* ボタンの幅を画面幅いっぱいにする */
 			box-sizing: border-box; /* パディングやボーダーを幅に含める */
@@ -315,6 +307,10 @@
 	.cipher-text {
 		word-wrap: break-word;
 		max-width: 100%;
+	}
+	.password-input{
+		font-size: 16px;
+		width: 30vw;
 	}
 
 	button {
